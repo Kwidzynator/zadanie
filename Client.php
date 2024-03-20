@@ -2,13 +2,13 @@
 
 class Client extends User
 {
-    private $city;
-    private $state;
-    private $country;
+    private string $city;
+    private string $state;
+    private string $country;
 
-    public function __construct($name, $username, $surname)
+    public function __construct($name, $surname, $username)
     {
-        parent::__construct($name, $username, $surname);
+        parent::__construct($name, $surname, $username);
     }
 
     public function getCity()
@@ -41,7 +41,7 @@ class Client extends User
     }
 
     public function location(){
-        return $this -> city && $this -> state && $this -> country;
+        return $this -> city . " " . $this -> state . " " . $this -> country;
     }
 
 }

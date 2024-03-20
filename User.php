@@ -6,7 +6,7 @@ class User
     public $surname;
     public $username;
     protected $is_admin = false;
-    public function __construct($name, $username, $surname){
+    public function __construct($name, $surname, $username){
         $this -> name = $name;
         $this -> surname = $surname;
         $this -> username = $username;
@@ -17,7 +17,7 @@ class User
         return $this->is_admin;
     }
 
-    protected function whoAmI(){
+    public function whoAmI(){
         echo $this -> name . " " . $this -> surname . " ";
         if($this->isAdmin()){
             echo "admin";
